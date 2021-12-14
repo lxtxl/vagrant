@@ -1,0 +1,11 @@
+---
+- name: Set timezone to Asia/Seoul
+  hosts: localhost
+  gather_facts: no
+  become: yes
+
+  tasks:
+  - name: install Java and tools
+    yum:
+      name: ['dstat', 'java-1.8.0-openjdk', 'java-1.8.0-openjdk-devel']
+      state: latest
